@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FC MOBILE — Table</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="wrap">
+  <section class="table-card">
+    <div class="table-top">
+      <div>
+        <div class="title">Table</div>
+        <div class="season"><span>Season</span><b>2026–27</b><span class="chevron">▾</span></div>
+      </div>
+    </div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th>#</th><th class="club-col">Club</th><th>MP</th><th>W</th><th>D</th><th>L</th><th>GF</th><th>GA</th><th>GD</th><th>Pts</th></tr></thead>
+        <tbody id="table"></tbody>
+      </table>
+    </div>
+    <div class="legend"><span><i class="blue"></i> Top position</span><span><i class="light"></i> Other positions</span></div>
+  </section>
+</main>
+<script>
+fetch('data.json').then(r=>r.json()).then(teams=>{
+ teams.sort((a,b)=>b.pts-a.pts||b.gd-a.gd||b.gf-a.gf||a.team.localeCompare(b.team));
+ const body=document.getElementById('table');
+ body.innerHTML=teams.map((t,i)=>`<tr class="${i===0?'first':''}"><td class="position">${i+1}</td><td class="club-col"><span class="badge">${t.team.slice(0,2)}</span>${t.team}</td><td>${t.p}</td><td>${t.w}</td><td>${t.d}</td><td>${t.l}</td><td>${t.gf}</td><td>${t.ga}</td><td>${t.gd}</td><td class="points">${t.pts}</td></tr>`).join('');
+}).catch(()=>document.getElementById('table').innerHTML='<tr><td colspan="10">Unable to load standings.</td></tr>');
+</script>
+</body>
+</html>
