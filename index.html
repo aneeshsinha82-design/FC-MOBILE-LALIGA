@@ -3,33 +3,32 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>FC MOBILE — Table</title>
+<title>FC MOBILE — LaLiga Table</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<main class="wrap">
-  <section class="table-card">
-    <div class="table-top">
-      <div>
-        <div class="title">Table</div>
-        <div class="season"><span>Season</span><b>2026–27</b><span class="chevron">▾</span></div>
-      </div>
-    </div>
-    <div class="scroll">
-      <table>
-        <thead><tr><th>#</th><th class="club-col">Club</th><th>MP</th><th>W</th><th>D</th><th>L</th><th>GF</th><th>GA</th><th>GD</th><th>Pts</th></tr></thead>
-        <tbody id="table"></tbody>
-      </table>
-    </div>
-    <div class="legend"><span><i class="blue"></i> Top position</span><span><i class="light"></i> Other positions</span></div>
-  </section>
+<main class="site-shell">
+<section class="cinema-scroll" id="cinema">
+<div class="stage">
+<div class="world">
+<div class="grid-glow"></div><div class="stadium-lines"></div>
+<header class="site-header">
+<a class="site-logo" href="#cinema">FC MOBILE</a>
+<nav class="site-nav"><a href="#cinema">Intro</a><a href="#standings">Standings</a><a href="#form">Form</a></nav>
+<button class="season-switcher" type="button">2026–27 ⌄</button>
+</header>
+<div class="hero-copy"><div class="eyebrow">FC MOBILE • LALIGA</div><h1 class="hero-title">STANDINGS</h1><p>Every match matters. Every point counts.</p></div>
+<div class="floating-ball ball-one">⚽</div><div class="floating-ball ball-two">⚽</div>
+<section class="standings-panel" id="standings">
+<div class="panel-heading"><div><div class="title">LaLiga Table</div><div class="panel-kicker">Live competition board</div></div><div class="live-pill"><i></i> LIVE TABLE</div></div>
+<div class="table-wrap"><table><thead><tr><th>#</th><th class="club-col">Club</th><th>MP</th><th>W</th><th>D</th><th>L</th><th>GF</th><th>GA</th><th>GD</th><th>Pts</th><th>Form</th></tr></thead><tbody id="table"></tbody></table></div>
+<div class="table-footer" id="form"><div class="legend"><span><i class="champ"></i> 1st place</span><span><i class="playoff"></i> Top places</span><span><i class="other"></i> Other positions</span></div><div class="hint">Scroll for more cinematic detail</div></div>
+</section>
+<section class="info-card"><span class="info-label">MATCH FORM</span><h2>Watch the run, not just the rank.</h2><p>Green is a win, yellow is a draw, red is a loss. A dash means the fixture has not been played.</p><div class="form-key"><span><b class="win"></b> Win</span><span><b class="draw"></b> Draw</span><span><b class="loss"></b> Loss</span><span><b class="none"></b> Not played</span></div></section>
+</div><div class="vignette"></div>
+</div>
+</section>
 </main>
-<script>
-fetch('data.json').then(r=>r.json()).then(teams=>{
- teams.sort((a,b)=>b.pts-a.pts||b.gd-a.gd||b.gf-a.gf||a.team.localeCompare(b.team));
- const body=document.getElementById('table');
- body.innerHTML=teams.map((t,i)=>`<tr class="${i===0?'first':''}"><td class="position">${i+1}</td><td class="club-col"><span class="badge">${t.team.slice(0,2)}</span>${t.team}</td><td>${t.p}</td><td>${t.w}</td><td>${t.d}</td><td>${t.l}</td><td>${t.gf}</td><td>${t.ga}</td><td>${t.gd}</td><td class="points">${t.pts}</td></tr>`).join('');
-}).catch(()=>document.getElementById('table').innerHTML='<tr><td colspan="10">Unable to load standings.</td></tr>');
-</script>
+<script src="script.js" defer></script>
 </body>
 </html>
