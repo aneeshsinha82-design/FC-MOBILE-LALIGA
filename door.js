@@ -1,0 +1,7 @@
+(() => {
+const body=document.body,enter=document.getElementById('enter'),home=document.getElementById('homeBtn'),source=document.getElementById('sourceVideo'),left=document.getElementById('leftDoor'),right=document.getElementById('rightDoor');let opening=false;
+function size(){const d=Math.min(devicePixelRatio||1,2);[left,right].forEach(c=>{if(!c)return;c.width=innerWidth*d;c.height=innerHeight*d;c.style.width=innerWidth+'px';c.style.height=innerHeight+'px'})}
+function paint(){if(!left||!right||!source)return;const a=left.getContext('2d'),b=right.getContext('2d');function f(){if(source.readyState>=2){a.clearRect(0,0,left.width,left.height);b.clearRect(0,0,right.width,right.height);a.drawImage(source,0,0,left.width,left.height);b.drawImage(source,0,0,right.width,right.height)}requestAnimationFrame(f)}f()}
+function open(){if(opening)return;opening=true;body.classList.add('transitioning');requestAnimationFrame(()=>body.classList.add('opening'));setTimeout(()=>{body.classList.remove('opening');body.classList.add('opened');document.querySelector('#page2 .standings-panel')?.classList.add('table-ready')},1850);setTimeout(()=>body.classList.remove('transitioning'),2400)}
+enter?.addEventListener('click',open);home?.addEventListener('click',()=>{body.classList.remove('opened','opening','transitioning');opening=false;window.scrollTo(0,0)});size();paint();addEventListener('resize',size);source?.play().catch(()=>{});
+})();
