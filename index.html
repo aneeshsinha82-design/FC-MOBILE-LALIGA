@@ -1,34 +1,22 @@
 <!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>FC MOBILE — LaLiga Table</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-<main class="site-shell">
-<section class="cinema-scroll" id="cinema">
-<div class="stage">
-<div class="world">
-<div class="grid-glow"></div><div class="stadium-lines"></div>
-<header class="site-header">
-<a class="site-logo" href="#cinema">FC MOBILE</a>
-<nav class="site-nav"><a href="#cinema">Intro</a><a href="#standings">Standings</a><a href="#form">Form</a></nav>
-<button class="season-switcher" type="button">2026–27 ⌄</button>
-</header>
-<div class="hero-copy"><div class="eyebrow">FC MOBILE • LALIGA</div><h1 class="hero-title">STANDINGS</h1><p>Every match matters. Every point counts.</p></div>
-<div class="floating-ball ball-one">⚽</div><div class="floating-ball ball-two">⚽</div>
-<section class="standings-panel" id="standings">
-<div class="panel-heading"><div><div class="title">LaLiga Table</div><div class="panel-kicker">Live competition board</div></div><div class="live-pill"><i></i> LIVE TABLE</div></div>
-<div class="table-wrap"><table><thead><tr><th>#</th><th class="club-col">Club</th><th>MP</th><th>W</th><th>D</th><th>L</th><th>GF</th><th>GA</th><th>GD</th><th>Pts</th><th>Form</th></tr></thead><tbody id="table"></tbody></table></div>
-<div class="table-footer" id="form"><div class="legend"><span><i class="champ"></i> 1st place</span><span><i class="playoff"></i> Top places</span><span><i class="other"></i> Other positions</span></div><div class="hint">Scroll for more cinematic detail</div></div>
-</section>
-<section class="info-card"><span class="info-label">MATCH FORM</span><h2>Watch the run, not just the rank.</h2><p>Green is a win, yellow is a draw, red is a loss. A dash means the fixture has not been played.</p><div class="form-key"><span><b class="win"></b> Win</span><span><b class="draw"></b> Draw</span><span><b class="loss"></b> Loss</span><span><b class="none"></b> Not played</span></div></section>
-</div><div class="vignette"></div>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FC MOBILE LaLiga</title><link rel="icon" href="data:,"><link rel="stylesheet" href="style.css"><script src="script.js" defer></script></head>
+<body><main class="site-shell"><section class="cinema-scroll" id="cinema"><div class="stage"><div class="world">
+<img class="scene-img sky-img" alt="" src="https://raft-blast-61784561.figma.site/_assets/v11/16b5007d9c93971e26ffe4e0e3e37946f6bd538c.png">
+<header class="site-header"><a class="site-logo" href="#cinema">FC MOBILE</a><nav class="site-nav"><a href="#cinema">Intro</a><a href="#bridge">Table</a><a href="#bazaar">Form</a></nav><button class="language-switcher"><span>2026–27</span><span>⌄</span></button></header>
+<div class="back-stack"><img class="scene-img back-img back-four" alt="" src="https://raft-blast-61784561.figma.site/_assets/v11/8a7f8af50e0ce92ec2e228e7b0b4112178c51cf1.png">
+<section class="sights-slider"><div class="sights-track">
+<article class="sight-card"><span class="sight-kicker">Competition</span><h3>LaLiga</h3><p>Follow every player's position and points.</p></article>
+<article class="sight-card"><span class="sight-kicker">Season</span><h3>2026–27</h3><p>The table updates from your project data.</p></article>
+<article class="sight-card"><span class="sight-kicker">Form</span><h3>Last Five</h3><p>Win, draw, loss and not-played symbols.</p></article>
+</div></section><img class="scene-img back-img back-bazaar" alt="" src="https://raft-blast-61784561.figma.site/_assets/v11/864afe00e41e2fa20a5aa546e15cb807e0f81384.png"></div>
+<div class="sights-controls"><button class="sight-nav sight-prev">←</button><button class="sight-nav sight-next">→</button></div>
+<h1 class="hero-title">FC MOBILE</h1>
+<img class="scene-img splitframe-img splitframe-left" alt="" src="https://raft-blast-61784561.figma.site/_assets/v11/7536d7b60a1fce482cf6edf3f0bffd3bad5d0f8a.png">
+<img class="scene-img splitframe-img splitframe-right" alt="" src="https://raft-blast-61784561.figma.site/_assets/v11/392db6a6a6b98e868bd7f8d3f55bb719d51e5028.png">
+<img class="scene-img bridge-img" alt="" src="https://raft-blast-61784561.figma.site/_assets/v11/c6a6d8ef49bca43f708aa852692942c45ec950d4.png">
+<img class="scene-img frame-two-img" alt="" src="https://raft-blast-61784561.figma.site/_assets/v11/ba75252bab2b1c510987b74837770f7bc8a6b2d4.png"><div class="shade"></div>
 </div>
-</section>
-</main>
-<script src="script.js" defer></script>
-</body>
-</html>
+<section class="intro-copy"><p>Your league. Your players. Every point matters.</p><div class="hero-tags"><span>LaLiga</span><span>Standings</span><span>Last 5 matches</span></div></section>
+<section class="story-panel story-panel-bridge" id="bridge"><div class="standings-box"><h2>LEAGUE TABLE</h2><div class="table-scroll"><table><thead><tr><th>#</th><th>Club</th><th>MP</th><th>W</th><th>D</th><th>L</th><th>GF</th><th>GA</th><th>GD</th><th>Pts</th><th>Form</th></tr></thead><tbody id="table"></tbody></table></div></div></section>
+<section class="story-panel story-panel-bazaar" id="bazaar"><h2>FORM MATTERS.</h2><p>🟢 Win &nbsp; 🟡 Draw &nbsp; 🔴 Loss &nbsp; ⚪ Not played</p></section>
+</div></section></main></body></html>
